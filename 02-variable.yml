@@ -8,6 +8,16 @@
      ansible.builtin.debug:
        msg: URL == {{URL}}
 
+- name: Declare variable in another file
+  hosts: all
+  connection: local
+  variable_files:
+    - var.yml
+  tasks:
+    - name: Access a variable
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+
 - name: Declare variable at tasks level
   hosts: all
   connection: local
