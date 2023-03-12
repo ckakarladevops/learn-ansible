@@ -44,14 +44,6 @@
       ansible.builtin.debug:
         msg: Ansible Host Name == {{ansible_fqdn}}
 
-- name: Print all variable facts
-  hosts: all
-  connection: local
-  tasks:
-    - name: Printing all variable facts
-      ansible.builtin.debug:
-      var: ansible_facts
-
 - name: Register a variable
   hosts: all
   connection: local
